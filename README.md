@@ -9,7 +9,7 @@ Sistemde bulunan genel iş pozisyonlarını listeleyen api
     * PostgreSQL Driver
     * Lombok
     
-###PostgreSQL HRMS database:
+### PostgreSQL HRMS database:
 * users (kullanıcı tipleri)
   * candidates (iş arayanlar/adaylar)
   * employers (işverenler)
