@@ -1,11 +1,11 @@
 package com.example.hrms.api.controllers;
 
 import com.example.hrms.business.abstracts.JobTitleService;
+import com.example.hrms.core.concretes.utilities.DataResult;
+import com.example.hrms.core.concretes.utilities.Result;
 import com.example.hrms.entities.concretes.JobTitle;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -20,7 +20,16 @@ public class JobTitlesController {
     }
 
     @GetMapping("/getAll") // api/job-titles/getAll
-    public List<JobTitle> getAll() {
+   /* public List<JobTitle> getAll() {
         return this.jobTitleService.getAll();
+    }*/
+
+    public DataResult<List<JobTitle>> getAll() {
+        return this.jobTitleService.getAll();
+    }
+
+    @PostMapping("/add")
+    public Result add(@RequestBody JobTitle jobTitle) {
+        return this.jobTitleService.add(jobTitle);
     }
 }

@@ -8,12 +8,13 @@ import javax.persistence.*;
 
 //lombok getter- setter and constructor usage
 @Data @AllArgsConstructor @NoArgsConstructor
+
 //database object definition
 @Entity
 @Table(name = "job_titles")
 public class JobTitle {
     @Id //table id
-    @GeneratedValue  //id increments
+    @GeneratedValue(strategy =GenerationType.IDENTITY)  //id increments
     @Column(name = "id") //table column name in db
     private int id;
     @Column(name = "title")
