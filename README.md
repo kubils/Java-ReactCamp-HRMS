@@ -17,4 +17,4 @@ Sistemde bulunan genel iş pozisyonlarını listeleyen api
   
 * job_titles (iş pozisyonları)
     
-![hrmsDB.png](db/hrmsDB.png)
+![d8-hrmsDB](db/d8-hrmsDB.png)
