@@ -4,6 +4,7 @@ import lombok.*;
 
 import javax.persistence.*;
 
+//not added to project
 @Data
 @AllArgsConstructor @NoArgsConstructor
 @Entity

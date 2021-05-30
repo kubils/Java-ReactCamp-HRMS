@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -46,6 +45,7 @@ public class Jobs {
     @ManyToOne
     @JoinColumn(name = "city_id")
     private City city;
+
     @ManyToOne
     @JoinColumn(name = "id_job_titles")
     private JobTitle jobTitle;
