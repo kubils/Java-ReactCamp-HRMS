@@ -19,7 +19,7 @@ public class JobTitlesController {
         this.jobTitleService = jobTitleService;
     }
 
-    @GetMapping("/getAll") // api/job-titles/getAll
+    @GetMapping("/getAll-jobTitles") // api/job-titles/getAll
    /* public List<JobTitle> getAll() {
         return this.jobTitleService.getAll();
     }*/
@@ -32,4 +32,9 @@ public class JobTitlesController {
     public Result add(@RequestBody JobTitle jobTitle) {
         return this.jobTitleService.add(jobTitle);
     }
+
+/*    @GetMapping("/getByJobTitle/")
+    public DataResult<JobTitle> getByJobTitle(@RequestParam String title){
+        return this.jobTitleService.getByJobTitle(title);
+    }*/
 }
