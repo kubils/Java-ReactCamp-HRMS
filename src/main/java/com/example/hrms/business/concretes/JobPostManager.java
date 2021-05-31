@@ -1,10 +1,8 @@
 package com.example.hrms.business.concretes;
 
 import com.example.hrms.business.abstracts.JobPostService;
-import com.example.hrms.core.concretes.utilities.DataResult;
-import com.example.hrms.core.concretes.utilities.Result;
-import com.example.hrms.core.concretes.utilities.SuccessDataResult;
-import com.example.hrms.core.concretes.utilities.SuccessResult;
+import com.example.hrms.core.concretes.utilities.*;
+import com.example.hrms.dataAccess.abstracts.EmployerUserDao;
 import com.example.hrms.dataAccess.abstracts.JobPostDao;
 import com.example.hrms.entities.concretes.Jobs;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,11 +15,14 @@ import java.util.List;
 public class JobPostManager implements JobPostService {
 
     JobPostDao jobPostDao;
-
+    EmployerUserDao employerUserDao;
+   
     @Autowired
-    public JobPostManager(JobPostDao jobPostDao) {
+    public JobPostManager(JobPostDao jobPostDao, EmployerUserDao employerUserDao) {
         this.jobPostDao = jobPostDao;
+        this.employerUserDao = employerUserDao;
     }
+
 
     @Override
     public DataResult<List<Jobs>> getAll() {
@@ -33,6 +34,18 @@ public class JobPostManager implements JobPostService {
     public Result add(Jobs jobs) {
       this.jobPostDao.save(jobs);
         return new SuccessResult("Jobs added!");
+    }
+    @Override
+    public DataResult<Jobs> setJobDisabled(int id) {
+        if(!this.jobPostDao.existsById(id)) {
+            return new ErrorDataResult<Jobs>("There is not any employer with this id!!");
+        } else {
+            Jobs job = this.jobPostDao.getOne(id);
+            job.setActive(false);
+            return new SuccessDataResult<Jobs>
+                    (this.jobPostDao.save(job), "selected job inactivated");
+        }
+
     }
 
     @Override

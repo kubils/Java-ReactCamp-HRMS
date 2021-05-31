@@ -28,7 +28,12 @@ public class JobsPostController {
         return this.jobPostService.add(job);
     }
 
-    @GetMapping("/getAll-jobs")
+    @PostMapping("/jobs/setJobDisabled")
+    public DataResult<Jobs> setJobDisabled(@RequestParam int id) {
+        return this.jobPostService.setJobDisabled(id);
+    }
+
+        @GetMapping("/getAll-jobs")
     public DataResult<List<Jobs>> getAll() {
         return this.jobPostService.getAll();
     }

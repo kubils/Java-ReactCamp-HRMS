@@ -16,4 +16,5 @@ public interface JobPostService {
     DataResult<List<Jobs>>  getByEmployer_Id(int employerId);
     DataResult<List<Jobs>>  findByActiveTrueAndEmployers(int employerId);
 
+    DataResult<Jobs> setJobDisabled(int id);
 }
