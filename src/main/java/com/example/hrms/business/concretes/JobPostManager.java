@@ -45,7 +45,6 @@ public class JobPostManager implements JobPostService {
             return new SuccessDataResult<Jobs>
                     (this.jobPostDao.save(job), "selected job inactivated");
         }
-
     }
 
     @Override

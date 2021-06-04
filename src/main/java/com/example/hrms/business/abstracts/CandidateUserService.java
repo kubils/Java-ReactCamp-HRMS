@@ -10,5 +10,5 @@ import java.util.List;
 public interface CandidateUserService {
     Result add(Candidates candidates);
     DataResult<List<Candidates>> getAll();
-
+    DataResult<List<Candidates>> getById(int id);
 }

@@ -26,6 +26,11 @@ public class CandidateUsersController {
         return this.candidateUserService.getAll();
     }
 
+    @GetMapping("/getById")
+    public DataResult<List<Candidates>> getById(int id) {
+        return this.candidateUserService.getById(id);
+    }
+
     @PostMapping("/add/candidates")
     public Result add(@RequestBody Candidates candidates) {
         return this.candidateUserService.add(candidates);

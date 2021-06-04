@@ -33,7 +33,7 @@ public class JobsPostController {
         return this.jobPostService.setJobDisabled(id);
     }
 
-        @GetMapping("/getAll-jobs")
+    @GetMapping("/getAll-jobs")
     public DataResult<List<Jobs>> getAll() {
         return this.jobPostService.getAll();
     }

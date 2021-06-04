@@ -42,4 +42,9 @@ public class CandidateUserManager implements CandidateUserService {
     public DataResult<List<Candidates>> getAll() {
         return new SuccessDataResult<Candidates>(this.candidateUserDao.findAll(), "Job seeker listed");
     }
+
+    @Override
+    public DataResult<List<Candidates>> getById(int id) {
+        return new SuccessDataResult<Candidates>(this.candidateUserDao.getById(id), "candidate listed");
+    }
 }

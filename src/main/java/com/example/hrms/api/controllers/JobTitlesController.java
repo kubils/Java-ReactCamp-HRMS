@@ -11,7 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("api/job-titles") //
-public class JobTitlesController {
+public class    JobTitlesController {
 
     private JobTitleService jobTitleService;
     @Autowired  // JTManager jtm = new JTManager to jobTitleService  : IoC
