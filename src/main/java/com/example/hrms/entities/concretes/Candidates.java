@@ -16,7 +16,7 @@ import java.util.List;
 @Data @AllArgsConstructor @NoArgsConstructor
 @Entity
 @Table(name = "candidates")
-@JsonIgnoreProperties({"hibernateLazyInitializer","handler","resume", "cvImages"}) //recursive solution
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler","resume"}) //recursive solution
 public class Candidates extends User{
 
     @Column(name = "name")

@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
-
+@CrossOrigin
 @RestController
 @RequestMapping("/api/jobs")
 public class JobsPostController {
