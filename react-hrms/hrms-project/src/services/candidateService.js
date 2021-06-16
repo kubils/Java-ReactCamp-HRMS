@@ -10,7 +10,7 @@ export default class CandidateService {
     }
 
     getCandidatesById(id) {
-        return axios.get("http://localhost:8080/api/candidates/getById?id=", id)
+        return axios.get("http://localhost:8080/api/candidates/getById?id="+ id)
     }
 
     postDataToCandidate(data) {

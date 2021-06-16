@@ -26,7 +26,7 @@ public class Candidates extends User{
     @Column(name = "identity_number")
     private String identityNumber;
     @Column(name = "birth_date")
-    private Date birthDate;
+    private LocalDate birthDate;
 
 
     @OneToMany(mappedBy = "candidates")

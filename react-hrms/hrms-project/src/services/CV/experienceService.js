@@ -4,7 +4,7 @@ export default class ExperienceService {
 
     getByDateOfFinishSorted(candidateId) {
 
-        return axios.get("http://localhost:8080/api/experience/getByDateOfFinishSorted?candidateId=", candidateId)
+        return axios.get("http://localhost:8080/api/experience/getByDateOfFinishSorted?candidateId="+ candidateId)
     }
 
     postDataToExperience(data) {

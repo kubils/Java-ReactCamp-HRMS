@@ -7,7 +7,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Date;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -34,10 +36,10 @@ public class Jobs {
     private double maxSalary;
 
     @Column(name = "date_of_open")
-    private Date dateOfOpen;
+    private LocalDate dateOfOpen;
 
     @Column(name = "date_of_closed")
-    private Date dateOfClosed;
+    private LocalDate dateOfClosed;
 
     @Column(name = "is_active")
     private boolean active;
@@ -53,4 +55,12 @@ public class Jobs {
     @ManyToOne
     @JoinColumn(name = "employer_id")
     private Employers employers;
+
+    @ManyToOne
+    @JoinColumn(name = "workType_id")
+    private WorkType workTypes;
+
+    @ManyToOne
+    @JoinColumn(name = "workTime_id")
+    private WorkTime workTime;
 }

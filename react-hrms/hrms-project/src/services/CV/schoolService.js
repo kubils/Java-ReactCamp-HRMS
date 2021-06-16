@@ -4,7 +4,7 @@ export default class SchoolService {
 
     getSchoolsByDateOfFinishSorted(candidateId) {
 
-        return axios.get("http://localhost:8080/api/schools/getByDateOfFinishSorted?candidateId=", candidateId)
+        return axios.get("http://localhost:8080/api/schools/getByDateOfFinishSorted?candidateId="+ candidateId)
     }
 
 

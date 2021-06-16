@@ -8,6 +8,7 @@ import com.example.hrms.entities.concretes.Jobs;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.persistence.Convert;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -25,6 +26,8 @@ public class JobsPostController {
 
     @PostMapping("/add-job")
     public Result add(@RequestBody Jobs job) {
+
+        System.out.println(job.getCity());
         return this.jobPostService.add(job);
     }
 

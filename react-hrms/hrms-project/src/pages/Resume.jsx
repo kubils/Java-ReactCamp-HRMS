@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Icon, Image, Menu, Table, Header } from 'semantic-ui-react'
-import ResumeService from '../layouts/services/resumeService'
+import ResumeService from '../services/resumeService'
 
 export default function Resumes() {
 
@@ -20,7 +20,7 @@ export default function Resumes() {
         // setProducts send to products
         //axios data.(localhost)data
         resumeService.getResumes().then(result => setResumes(result.data.data))
-    })
+    }, [])
 
     // let candidateExperiences;
 

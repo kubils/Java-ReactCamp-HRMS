@@ -8,7 +8,7 @@ export default class ResumeService {
     }
 
     getResumesByCandidateId(id) {
-        return axios.get("http://localhost:8080/api/resume/getByCandidates_Id?candidatesId",id)
+        return axios.get("http://localhost:8080/api/resume/getByCandidates_Id?candidatesId"+ id)
     }
 
     getResumeWithCandideDetails() {

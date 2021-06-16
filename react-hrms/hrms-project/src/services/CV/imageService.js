@@ -18,7 +18,7 @@ export default class ImageService {
 
     getImageByCandidateId(id) {
 
-        return axios.get("http://localhost:8080/api/images/getByCandidates_Id?candidateId=", id)
+        return axios.get("http://localhost:8080/api/images/getByCandidates_Id?candidateId="+ id)
     }
 
     deleteImage = (id) => {

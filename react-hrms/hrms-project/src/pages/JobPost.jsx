@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import { Icon, Menu, Table } from 'semantic-ui-react'
-import JobPostService from '../layouts/services/jobPostService'
+import JobPostService from '../services/jobPostService'
 
 export default function JobPosts() {
 
@@ -21,7 +21,7 @@ export default function JobPosts() {
         // setProducts send to products
         //axios data.(localhost)data
         jobPostService.getJobsPost().then(result => setjobPost(result.data.data))
-    })
+    },[])
 
     return (
         <div>
@@ -63,7 +63,7 @@ export default function JobPosts() {
 
                 <Table.Footer>
                     <Table.Row>
-                        <Table.HeaderCell colSpan='5'>
+                        <Table.HeaderCell colSpan='15'>
                             <Menu floated='right' pagination>
                                 <Menu.Item as='a' icon>
                                     <Icon name='chevron left' />

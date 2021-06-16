@@ -9,22 +9,24 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.util.List;
 
-//lombok getter- setter and constructor usage
-@Data @AllArgsConstructor @NoArgsConstructor
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 @JsonIgnoreProperties({"hibernateLazyInitializer","handler", "jobs"}) //recursive solution
 //database object definition
 @Entity
-@Table(name = "job_titles")
-public class JobTitle {
+@Table(name = "work_types")
+public class WorkType {
 
     @Id //table id
-    @GeneratedValue(strategy =GenerationType.IDENTITY)  //id increments
-    @Column(name = "id") //table column name in db
+    @GeneratedValue(strategy = GenerationType.IDENTITY)  //id increments
+    @Column(name = "workType_id") //table column name in db
     private int id;
-    @Column(name = "title")
-    private String title;
+
+    @Column(name = "name")
+    private String name;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "jobTitle")
+    @OneToMany(mappedBy = "workTypes")
     private List<Jobs> jobs;
 }

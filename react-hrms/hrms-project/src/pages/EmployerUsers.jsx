@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import { Icon, Menu, Table } from 'semantic-ui-react'
-import EmployerService from '../layouts/services/employerService'
+import EmployerService from '../services/employerService'
 
 export default function EmployerUsers() {
 
@@ -20,7 +20,7 @@ export default function EmployerUsers() {
         // setProducts send to products
         //axios data.(localhost)data
         employerService.getEmployers().then(result => setEmployers(result.data.data))
-    })
+    },[])
 
     return (
         <div>
@@ -54,7 +54,7 @@ export default function EmployerUsers() {
 
                 <Table.Footer>
                     <Table.Row>
-                        <Table.HeaderCell colSpan='5'>
+                        <Table.HeaderCell colSpan='16'>
                             <Menu floated='right' pagination>
                                 <Menu.Item as='a' icon>
                                     <Icon name='chevron left' />

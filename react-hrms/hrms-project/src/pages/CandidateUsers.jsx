@@ -1,9 +1,13 @@
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import { Icon, Menu, Table } from 'semantic-ui-react'
-import CandidateService from '../layouts/services/candidateService'
+import CandidateService from '../services/candidateService'
+import { Link } from 'react-router-dom'
 
 export default function CandidateUsers() {
 
+
+
+    //let { id } = useParams()
     //hooks
     //destructer  ;
     //setProducts -> products
@@ -11,23 +15,23 @@ export default function CandidateUsers() {
     const [candidates, setCandidates] = useState([])
     //products.map((p) => (...
     //when products changed page render again
-
+    //const [cvImages] = candidates
     //hooks
-    useEffect(() =>{
+    useEffect(() => {
         //services -> productservice
         let candidateService = new CandidateService()
         //if success then(...) false catch(...)
         // setProducts send to products
         //axios data.(localhost)data
         candidateService.getCandidates().then(result => setCandidates(result.data.data))
-    })
+    }, [])
 
     return (
         <div>
-            <Table celled>
+           <Table celled>
                 <Table.Header>
                     <Table.Row>
-                        <Table.HeaderCell>Image</Table.HeaderCell>
+                        {/* <Table.HeaderCell>Image</Table.HeaderCell> */}
                         <Table.HeaderCell>Name</Table.HeaderCell>
                         <Table.HeaderCell>Last Name</Table.HeaderCell>
                         <Table.HeaderCell>Identity Number</Table.HeaderCell>
@@ -39,22 +43,23 @@ export default function CandidateUsers() {
 
                 <Table.Body>
                     {
-                       candidates.map((c) => (
-                        //unique
-                        //connection with data  : swagger data
-                        <Table.Row key={c.id}>
-                            <Table.Cell>{c.cvImages.photoUrl}</Table.Cell>
-                            <Table.Cell>{c.name}</Table.Cell>
-                            <Table.Cell>{c.lastName}</Table.Cell>
-                            <Table.Cell>{c.identityNumber}</Table.Cell>
-                            <Table.Cell>{c.birthDate}</Table.Cell>
-                            <Table.Cell>{c.email}</Table.Cell>
-                        </Table.Row>
-                       ))
+                        candidates.map((c) => (
+                            //unique
+                            //connection with data  : swagger data
+                            <Table.Row key={c.id}>
+                                {/* <Table.Cell>{c.cvImages.photoUrl}</Table.Cell> */}
+                                <Table.Cell><Link to = {`/candidates/${c.id}`}>{c.name}</Link></Table.Cell>
+                                <Table.Cell>{c.lastName}</Table.Cell>
+                                <Table.Cell>{c.identityNumber}</Table.Cell>
+                                <Table.Cell>{c.birthDate}</Table.Cell>
+                                <Table.Cell>{c.email}</Table.Cell>
+                            </Table.Row>
+                        ))
                     }
 
-                    
+
                 </Table.Body>
+
 
                 <Table.Footer>
                     <Table.Row>
