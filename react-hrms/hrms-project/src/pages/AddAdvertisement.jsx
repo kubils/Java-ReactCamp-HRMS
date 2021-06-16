@@ -264,7 +264,7 @@ export default function AddAdvertisement() {
                                         type="number"
                                         name="minSalary"
                                         min="0"
-                                        placeholder="Minimum Maaş Miktarı"
+                                        placeholder="Min Salar Amount"
                                         onChange={handleChange}
                                         value={values.minSalary || ''}
                                         onBlur={handleBlur}
@@ -283,7 +283,7 @@ export default function AddAdvertisement() {
                                         type="number"
                                         name="maxSalary"
                                         min="0"
-                                        placeholder="Maximum Maaş Miktarı"
+                                        placeholder="Max Salar Amount"
                                         onChange={handleChange}
                                         value={values.maxSalary || ''}
                                         onBlur={handleBlur}
@@ -302,7 +302,7 @@ export default function AddAdvertisement() {
                                         type="number"
                                         name="number_of_job_position"
                                         min="0"
-                                        placeholder="number_of_job_position"
+                                        placeholder="Number of position"
                                         onChange={handleChange}
                                         value={values.number_of_job_position || ''}
                                         onBlur={handleBlur}
@@ -319,7 +319,6 @@ export default function AddAdvertisement() {
                                     <input
                                         type="date"
                                         name="dateOfClosed"
-                                        placeholder="İlan Bitiş Tarihi"
                                         onChange={handleChange}
                                         value={values.dateOfClosed || ''}
                                         onBlur={handleBlur}
